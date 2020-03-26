@@ -1,5 +1,23 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 side-menu">
+            <div class="logo"></div>
+            <ul>
+                <li>
+                    <LinkTo @route='index'>Accueil</LinkTo>
+                </li>
+                <hr>
+                <LinkTo @route='histoires'>Catalogue</LinkTo>
+                <hr>
+                
+                
+                <li>Policier</li>
+                <li>Fantastique</li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            <span>Lecteur XXX, à vous de jouer</span>
+            {{outlet}}
+        </div>
+    </div>
+</div>
