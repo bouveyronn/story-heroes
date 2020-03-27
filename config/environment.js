@@ -36,7 +36,7 @@ module.exports = function(environment) {
         ENV.baseURL = null;
         ENV.rootURL = null;
         ENV.locationType = 'hash';
-        ENV.apiUrl = process.env.API_URL;
+        ENV.apiUrl = 'http://localhost:8080';
     }
 
     if (environment === 'test') {
