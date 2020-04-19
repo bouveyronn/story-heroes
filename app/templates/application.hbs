@@ -1,23 +1,37 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-3 side-menu">
-            <div class="logo"></div>
-            <ul>
-                <li>
-                    <LinkTo @route='index'>Accueil</LinkTo>
-                </li>
-                <hr>
-                <LinkTo @route='histoires'>Catalogue</LinkTo>
-                <hr>
-                
-                
-                <li>Policier</li>
-                <li>Fantastique</li>
-            </ul>
-        </div>
-        <div class="col-sm-9">
-            <span>Lecteur XXX, à vous de jouer</span>
-            {{outlet}}
-        </div>
+<div class="container-fluid p-0">
+
+
+  <div class="side-menu bg-dark" id="menu">
+    <LinkTo @route='index'><div class="logo"></div></LinkTo>
+    <div class="side-nav p-0">
+      <ul class="p-0">
+        <LinkTo @route='histoires.catalogue'><li class="ft-c-light">Catalogue</li></LinkTo>
+        <LinkTo @route='histoires.new'><li class="ft-c-white">Créer une histoire</li></LinkTo>
+        <hr>
+        <li class="ft-c-white">Policier</li>
+        <li class="ft-c-white">Fantastique</li>
+        <li class="ft-c-white">Énigme</li>
+      </ul>
     </div>
+
+  </div>
+  <div id="burgerMenu" class="burger"></div>
+  <div class="content">
+    <div class="welcome bg-light">
+      <span>Lecteur xxx, à vous de jouer !</span>
+
+    </div>
+
+    <div class="container ml-0 mr-0 m-auto">
+      {{outlet}}
+    </div>
+  </div>
 </div>
+
+<script>
+  $('#burgerMenu').click(function () {
+    $('#menu').toggleClass("show");
+    this.backgroundColor("yellow");
+  });
+
+</script>

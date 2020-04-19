@@ -1,9 +1,6 @@
 import Route from '@ember/routing/route';
-import ENV from 'story-heroes/config/environment';
+import HistoireAdapter from 'story-heroes/adapters/histoires';
 
 export default Route.extend({
-    model() {
-        return this.store.findAll('histoire');
-
-    }
 });
+
