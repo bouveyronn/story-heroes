@@ -5,7 +5,6 @@ export default Controller.extend({
 
     actions: {
         ajouter_Histoire() {
-
             let data1 = {
                 titre: "Test 19/04/2020 de l'insertion d'une histoire via ember",
                 resume: "Résumé de l'insertion, si ce message est visible ne bdd, cela à fonctionner via ember!",
@@ -19,7 +18,7 @@ export default Controller.extend({
                 type: "POST",
                 url: "http://localhost:8080/histoires",
                 data: JSON.stringify(data1),
-                success: alert("coucou"),
+                success: alert("Ajout effectué"),
                 dataType: "json",
                 contentType: "application/json",
             });
