@@ -1,1 +1,5 @@
-<button class="btn bg-third ft-c-white" {{action "ajouter_Histoire"}}>En avant !</button>
+<form {{action 'ajouter_Histoire' on="submit" id="histoireForm"}}>
+{{input type = "text" placeholder = "Entrer titre" value = titre}}
+{{input type = "text" placeholder = "Entrer un resumé" value = resume}}
+<button type="submit">Creer nouvelle histoire</button>
+</form>
