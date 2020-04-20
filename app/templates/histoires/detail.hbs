@@ -1,41 +1,5 @@
 
+<HistoireDetail @model = {{this.model}} @type = "user"/>
 
 
-<div class="row">
-  <div class="col-md-4 col-12">
 
-    {{#if this.model.image}}
-      <img src="{{this.model.image}}" class="card-img-top" alt="...">
-    {{else}}
-      <img src="https://via.placeholder.com/1080" class="card-img-top" alt="...">
-    {{/if}}
-  </div>
-  <div class="col-md-8 col-12 mt-0 mb-0 m-auto">
-    <p>{{this.model.titre}}</p>
-    <p>{{this.model.resume}}</p>
-    <button class="btn bg-third ft-c-light">Commencer à jouer !</button>
-    <hr>
-    {{#each this.model.genres as |genre|}}
-      {{#if genre}}
-
-        <span class="genre">{{genre.libelle}}</span>
-      {{/if}}
-    {{/each}}
-
-  </div>
-
-</div>
-
-<!--<div class="row">-->
-<!--  <div class="container mt-4">-->
-<!--    <ul class="etape">-->
-<!--      {{#each this.model.etapes as |etape|}}-->
-<!--        {{#if etape}}-->
-
-<!--            <li class="etape">{{etape.titre}}</li>-->
-
-<!--        {{/if}}-->
-<!--      {{/each}}-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--</div>-->

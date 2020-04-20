@@ -1,49 +1,26 @@
-<div class="row">
-  <div class="col-md-4 col-12">
+<HistoireDetail @model = {{this.model}} @type = "author"/>
+      
+<div class="table-responsive mt-5">
+    <table class="table table-hover ">
+        <thead class="thead-dark">
+            <tr>
+                <th>Titre</th>
+                <th>Résumé</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    {{#if this.model.image}}
-      <img src="{{this.model.image}}" class="card-img-top" alt="...">
-    {{else}}
-      <img src="https://via.placeholder.com/1080" class="card-img-top" alt="...">
-    {{/if}}
-  </div>
-  <div class="col-md-8 col-12 mt-0 mb-0 m-auto">
-    <p>{{this.model.titre}}</p>
-    <p>{{this.model.resume}}</p>
-    <hr>
-    {{#each this.model.genres as |genre|}}
-      {{#if genre}}
-
-        <span class="genre">{{genre.libelle}}</span>
-      {{/if}}
-    {{/each}}
-    
-  </div>
-  
-    
-    <div class="table-responsive">
-        <table class="table table-hover ">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Titre</th>
-                    <th>Résumé</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                {{#each this.model.etapes as |etape|}}
-                    {{#if etape}}
-                        <tr>
-                            <td>{{etape.titre}}</td>
-                            <td>{{etape.description}}</td>
-                        </tr>
-                    {{/if}}
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
-    
-
-  
-
+            {{#each this.model.etapes as |etape|}}
+                {{#if etape}}
+                    <tr>
+                        <td>{{etape.titre}}</td>
+                        <td>{{etape.description}}</td>
+                    </tr>
+                {{/if}}
+            {{/each}}
+        </tbody>
+    </table>
 </div>
+    
+
+  
