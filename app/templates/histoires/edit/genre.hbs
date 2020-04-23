@@ -1,0 +1,49 @@
+
+
+<style>
+
+    .popup-bg
+    {
+        top: 0;
+        position: absolute;
+        width: calc(100% - 50px);
+        height: 100%;
+        background-color: black;
+        opacity: 0.8;
+        z-index: 1000;
+    }
+    .popup{
+        top: 0;
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        z-index: 10000;
+    }
+    .popup .body{
+        position: absolute;
+        opacity: 1;
+        text-align: center;
+        color: #FFF;
+    }
+</style>
+<div class="popup-bg"></div>
+<div class="popup" id="ajouter-genre">
+
+    <div class="body ml-0 mr-0 m-auto">
+        
+        <form {{action 'ajouter_genre' on="submit"}}>
+            <h1>Ajouter un genre à l'histoire </h1>
+            <input type="hidden" value="{{this.model.id}}" id="histoire">
+            <label for="select-genres">Sélectionnez un genre !</label>
+            <select name="genres" id="genre">
+                {{#each this.model.genres as |genre|}}
+                {{!-- TODO Réupérer tous les genres --}}
+                    <option value="{{genre.id}}">{{genre.libelle}}</option>
+                {{/each}}
+            </select>
+            <button type="submit">Ajouter ce genre</button>
+        </form>
+        
+    </div>
+    
+</div>

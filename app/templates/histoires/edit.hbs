@@ -1,5 +1,5 @@
 <HistoireDetail @model = {{this.model}} @type = "author"/>
-      
+
 <div class="table-responsive mt-5">
     <table class="table table-hover ">
         <thead class="thead-dark">
@@ -15,12 +15,13 @@
                     <tr>
                         <td>{{etape.titre}}</td>
                         <td>{{etape.description}}</td>
+
                     </tr>
                 {{/if}}
             {{/each}}
         </tbody>
     </table>
 </div>
-    
+{{outlet}}
 
-  
+

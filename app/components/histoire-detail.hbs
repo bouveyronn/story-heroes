@@ -14,15 +14,14 @@
     <button type="button" class="btn bg-third ft-c-light">Commencer à jouer !</button>
     {{/if}}
     <hr>
-    {{#each @model.genres as |genre|}}
-      {{#if genre}}
-        <span class="genre">{{genre.libelle}}</span>
-      {{/if}}
-    {{/each}}
-    {{#if (eq @type "author")}}
-        <span class="genre">+</span>
-    {{/if}}
-
+        {{#each @model.genres as |genre|}}
+        {{#if genre}}
+            <span class="genre">{{genre.libelle}}</span>
+        {{/if}}
+        {{/each}}
+        {{#if (eq @type "author")}}
+            <LinkTo @route='histoires.edit.genre'><span type="submit" class="genre">+</span></LinkTo>
+        {{/if}}
   </div>
     {{yield}}
 </div>
