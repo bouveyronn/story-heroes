@@ -1,0 +1,24 @@
+<h2>Donc là, on aura les superbes histoires du genre : {{this.model.libelle}}</h2>
+
+<div class="row">
+{{#each this.model as |histoire|}}
+  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-0 mr-1 ml-1 mb-3">
+    <div class="card-custom" id="{{histoire.id}}">
+      {{#if histoire.image}}
+        <img src="{{histoire.image}}" class="card-img-top img-custom" alt="...">
+      {{else}}
+        <img src="https://via.placeholder.com/1080" class="card-img-top" alt="...">
+      {{/if}}
+      <div class="card-body bg-third">
+
+        <LinkTo @route="histoires.detail" @model="{{histoire.id}}">
+          <h5 class="card-title ft-c-white text-center ft-small">{{histoire.titre}}</h5>
+        </LinkTo>
+        <hr>
+        <p class="card-text ft-c-white ft-small">{{histoire.resume}}</p>
+
+      </div>
+    </div>
+  </div>
+{{/each}}
+</div>
