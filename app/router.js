@@ -12,7 +12,7 @@ Router.map(function() {
         this.route('detail', { path: '/:histoire_id' });
         this.route('new', { path: '/creer-une-histoire' });
         this.route('edit', { path: '/edit/:histoire_id' }, function() {
-            this.route('genre');
+          this.route('genre');
         });
     });
 });

@@ -30,20 +30,19 @@
 <div class="popup" id="ajouter-genre">
 
     <div class="body ml-0 mr-0 m-auto">
-        
+
         <form {{action 'ajouter_genre' on="submit"}}>
             <h1>Ajouter un genre à l'histoire </h1>
             <input type="hidden" value="{{this.model.id}}" id="histoire">
             <label for="select-genres">Sélectionnez un genre !</label>
-            <select name="genres" id="genre">
-                {{#each this.model.genres as |genre|}}
-                {{!-- TODO Réupérer tous les genres --}}
-                    <option value="{{genre.id}}">{{genre.libelle}}</option>
-                {{/each}}
+
+            <select selected="3" onchange={{action "selectGenre" value="target.value"}}>
+              {{#each this.model.modelGenre as |genre|}}
+                <option value="{{genre.id}}-{{this.model.modelHistoire.id}}" selected={{eq genre genre.libelle}}>{{genre.libelle}}</option>
+              {{/each}}
             </select>
-            <button type="submit">Ajouter ce genre</button>
+              <button type="submit">Ajouter ce genre</button>
         </form>
-        
     </div>
-    
+
 </div>
