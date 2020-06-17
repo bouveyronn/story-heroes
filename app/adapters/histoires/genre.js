@@ -11,5 +11,9 @@ export default Ember.Object.extend({
 
   findAll: function() {
       return ajax(Api + '/genres/');
+  },
+
+  findGenre: function(genre_id) {
+    return ajax(Api + '/genres/' + genre_id);
   }
 });
