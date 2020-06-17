@@ -7,5 +7,9 @@ const Api = 'http://localhost:8080';
 export default Ember.Object.extend({
   findHistoiresGenre: function (genre_id) {
       return ajax(Api + '/histoire-genre/' + genre_id);
+  },
+
+  findAll: function() {
+      return ajax(Api + '/genres/');
   }
 });

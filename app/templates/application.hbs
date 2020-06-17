@@ -8,9 +8,9 @@
         <LinkTo @route='histoires.catalogue'><li class="ft-c-light">Catalogue</li></LinkTo>
         <LinkTo @route='histoires.new'><li class="ft-c-white">Créer une histoire</li></LinkTo>
         <hr>
-        <li class="ft-c-white">Policier</li>
-        <li class="ft-c-white">Fantastique</li>
-        <li class="ft-c-white">Énigme</li>
+        {{#each this.model.modelGenre as |genre|}}
+          <a href="/histoires/genre/{{genre.id}}"><li class="ft-c-white">{{genre.libelle}}</li></a>
+        {{/each}}
       </ul>
     </div>
 
